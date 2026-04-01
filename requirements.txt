@@ -1,0 +1,4 @@
+# Optional Benchmarking & Monitoring
+psutil
+# typing-extensions (for better type support on older versions)
+typing-extensions>=4.0.0

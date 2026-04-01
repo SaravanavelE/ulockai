@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ulockai"
+version = "0.1.0"
+authors = [
+    { name = "UlockAI Team", email = "oss@ulockai.com" },
+]
+description = "A lightweight, production-ready AI security SDK for protecting LLM agents."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/SaravanavelE/ulockai"
+"Bug Tracker" = "https://github.com/SaravanavelE/ulockai/issues"
