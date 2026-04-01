@@ -1,10 +1,10 @@
 Metadata-Version: 2.4
 Name: ulockai
-Version: 0.1.0
+Version: 0.1.1
 Summary: A lightweight, production-ready AI security SDK for protecting LLM agents.
 Author-email: UlockAI Team <oss@ulockai.com>
-Project-URL: Homepage, https://github.com/ulockai/ulockai
-Project-URL: Bug Tracker, https://github.com/ulockai/ulockai/issues
+Project-URL: Homepage, https://github.com/SaravanavelE/ulockai
+Project-URL: Bug Tracker, https://github.com/SaravanavelE/ulockai/issues
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent

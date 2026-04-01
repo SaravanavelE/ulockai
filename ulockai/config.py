@@ -6,6 +6,7 @@ RISK_THRESHOLD_FLAG = 40
 
 # Prompt Injection Patterns (Case Insensitive)
 PROMPT_INJECTION_KEYWORDS = [
+    r"ignore\s+previous\s+instructions",
     r"ignore\s+(?:all\s+)?instructions",
     r"disregard\s+(?:all\s+)?instructions",
     r"as\s+a\s+model\s+with\s+No\s+restrictions",
@@ -20,6 +21,11 @@ PROMPT_INJECTION_KEYWORDS = [
     r"reveal\s+secret\s+instructions",
     r"what\s+is\s+your\s+system\s+prompt",
     r"what\s+was\s+the\s+initial\s+instruction",
+    r"forget\s+previous\s+instructions",
+    r"ignore\s+above\s+instructions",
+    r"ignore\s+earlier\s+instructions",
+    r"override\s+instructions",
+    r"bypass\s+restrictions",
     # Specific bypass techniques
     r"HTTP GET", r"powershell", r"chmod \+x", r"rm -rf"
 ]
