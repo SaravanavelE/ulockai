@@ -159,13 +159,17 @@ nav {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.hero-text {
+    max-width: 650px;
 }
 
 .gradient-text {
-    font-size: 4rem;
+    font-size: 4.5rem;
     line-height: 1.1;
     background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent) 100%);
     -webkit-background-clip: text;
@@ -178,7 +182,7 @@ nav {
     font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
-    max-width: 550px;
+    max-width: 100%;
 }
 
 /* Install Box */
@@ -256,6 +260,8 @@ nav {
 .hero-visual {
     display: flex;
     justify-content: center;
+    width: 100%;
+    padding-top: 0;
 }
 
 .hero-visual-box {
@@ -263,13 +269,13 @@ nav {
     max-width: 550px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    border-radius: 28px;
+    padding: 1rem;
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.4), 0 0 30px var(--accent-glow);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.5s ease;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-visual-box img {
@@ -279,9 +285,9 @@ nav {
 }
 
 .hero-visual-box:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
     border-color: var(--accent);
-    box-shadow: 0 50px 100px var(--accent-glow);
+    box-shadow: 0 60px 120px -20px rgba(0,0,0,0.5), 0 0 50px var(--accent-glow);
 }
 
 /* Sections */
@@ -403,11 +409,30 @@ nav {
 
 .code-header {
     background: var(--surface);
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     border-bottom: 1px solid var(--border);
+}
+
+.code-title, .file-tab {
+    margin-right: auto;
+}
+
+.copy-btn-code {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.copy-btn-code:hover {
+    color: var(--accent);
+    transform: scale(1.1);
 }
 
 .dot {
@@ -610,6 +635,7 @@ footer {
     .hero-visual {
         order: 1;
         margin-bottom: 2rem;
+        padding-top: 0;
     }
 
     .hero-text h1 {

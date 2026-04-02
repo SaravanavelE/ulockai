@@ -40,29 +40,34 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(savedTheme);
 
     // --- Original Logic ---
-    // Copy to Clipboard Functionality
-    const copyBtn = document.getElementById('copy-btn');
-    const installCommand = document.getElementById('install-command');
+    // --- Copy to Clipboard Functionality ---
+    function setupCopyButton(btnId, contentId) {
+        const btn = document.getElementById(btnId);
+        const content = document.getElementById(contentId);
 
-    if (copyBtn) {
-        copyBtn.addEventListener('click', () => {
-            const command = installCommand.innerText;
-            navigator.clipboard.writeText(command).then(() => {
-                // Change icon to checkmark for 2 seconds
-                const originalIcon = copyBtn.innerHTML;
-                copyBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>`;
-                
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalIcon;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
+        if (btn && content) {
+            btn.addEventListener('click', () => {
+                const text = content.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="${btnId === 'copy-btn' ? '20' : '18'}" height="${btnId === 'copy-btn' ? '20' : '18'}" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>`;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalIcon;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
             });
-        });
+        }
     }
+
+    // Setup both copy buttons
+    setupCopyButton('copy-btn', 'install-command');
+    setupCopyButton('copy-btn-code', 'app-code-content');
 
     // Intersection Observer for scroll animations
     const observerOptions = {
