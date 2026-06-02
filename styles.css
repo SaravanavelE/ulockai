@@ -492,6 +492,59 @@ nav {
     overflow: hidden;
 }
 
+/* Code Browser & Headers styling */
+.code-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.code-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dots {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.file-tab {
+    margin-left: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.copy-code-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.copy-code-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--text-secondary);
+    transform: scale(1.05);
+}
+
+.copy-code-btn.copied {
+    color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    background: rgba(45, 212, 191, 0.1) !important;
+}
+
+
 .code-content {
     padding: 2rem;
     font-family: 'JetBrains Mono', monospace;

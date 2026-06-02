@@ -80,6 +80,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Copy Code Block Functionality
+    const copyCodeBtn = document.getElementById('copy-code-btn');
+    const appCodeBlock = document.getElementById('app-code');
+
+    if (copyCodeBtn && appCodeBlock) {
+        copyCodeBtn.addEventListener('click', () => {
+            const codeText = appCodeBlock.innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                // Toggle copied classes and icon
+                copyCodeBtn.classList.add('copied');
+                const originalIcon = copyCodeBtn.innerHTML;
+                copyCodeBtn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>`;
+
+                setTimeout(() => {
+                    copyCodeBtn.classList.remove('copied');
+                    copyCodeBtn.innerHTML = originalIcon;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+            });
+        });
+    }
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
@@ -159,4 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
 });
